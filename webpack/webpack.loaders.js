@@ -1,6 +1,9 @@
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const ETP = new ExtractTextPlugin({
+  allChunks: true
+});
 
 module.exports = [
   {
@@ -14,7 +17,7 @@ module.exports = [
     test: /\.css$/,
     use: ((env) => {
       if(env == 'production') {
-        return ExtractTextPlugin.extract({
+        return ETP.extract({
           use: [{
             loader:'css-loader',
             options: {
@@ -42,7 +45,7 @@ module.exports = [
     test: /\.less$/,
     use: ((env) => {
       if(env == 'production') {
-        return ExtractTextPlugin.extract({
+        return ETP.extract({
           use: [{
             loader:'css-loader',
             options: {
