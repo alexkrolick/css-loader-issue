@@ -6,7 +6,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var ETP = new ExtractTextPlugin({
   filename: 'modules-[name]-[contenthash].css',
   ignoreOrder: false,
-  allChunks: false,
+  allChunks: true,
 })
 
 module.exports = {

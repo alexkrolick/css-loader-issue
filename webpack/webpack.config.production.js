@@ -7,7 +7,7 @@ var rimraf = require('rimraf');
 var ETP = new ExtractTextPlugin({
   filename: 'modules-[name]-[contenthash].css',
   ignoreOrder: false,
-  allChunks: false,
+  allChunks: true,
 })
 
 module.exports = {
